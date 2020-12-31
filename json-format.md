@@ -152,8 +152,6 @@ Example event with `String`-valued `data`:
     "source" : "/mycontext",
     "id" : "A234-1234-1234",
     "time" : "2018-04-05T17:31:00Z",
-    "comexampleextension1" : "value",
-    "comexampleothervalue" : 5,
     "datacontenttype" : "text/xml",
     "data" : "<much wow=\"xml\"/>"
 }
@@ -168,8 +166,6 @@ Example event with `Binary`-valued data
     "source" : "/mycontext",
     "id" : "B234-1234-1234",
     "time" : "2018-04-05T17:31:00Z",
-    "comexampleextension1" : "value",
-    "comexampleothervalue" : 5,
     "datacontenttype" : "application/vnd.apache.thrift.binary",
     "data_base64" : "... base64 encoded string ..."
 }
@@ -185,14 +181,28 @@ or [JSON data](#31-handling-of-data) data:
     "source" : "/mycontext",
     "id" : "C234-1234-1234",
     "time" : "2018-04-05T17:31:00Z",
-    "comexampleextension1" : "value",
-    "comexampleothervalue" : 5,
     "datacontenttype" : "application/json",
     "data" : {
         "appinfoA" : "abc",
         "appinfoB" : 123,
         "appinfoC" : true
     }
+}
+```
+
+Example event with two publisher-specific extensions (see [Primer](primer.md#json-extensions)):
+
+```JSON
+{
+    "specversion" : "1.0",
+    "type" : "com.example.someevent",
+    "source" : "/mycontext",
+    "id" : "A234-1234-1234",
+    "time" : "2018-04-05T17:31:00Z",
+    "comexampleextension1" : "value",
+    "comexampleothervalue" : 5,
+    "datacontenttype" : "text/xml",
+    "data" : "<much wow=\"xml\"/>"
 }
 ```
 
